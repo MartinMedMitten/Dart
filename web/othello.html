@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Othello</title>
+    <link type="text/css" rel="stylesheet" href="othello.css">
+    <link rel="components" href="packages/widget/components/tabs.html">
+  </head>
+
+  <body>
+    
+    <div id="playArea">
+      <div id="container"> 
+        <canvas id="mainCanvas" class="center"></canvas>
+        <div id='popup'>
+          <p> </p>
+          <input type="button" id="popupOkButton" value="OK" />
+        </div>      
+      </div>
+      
+      <div id="activePlayerDiv">
+        <span id="whosTurn"> </span>
+      </div>
+      <div id="backToLobby">BACK</div>
+      <div id="refreshButton">REFRESH</div>
+      <div id="thisPlayerName"></div>
+    </div>
+    
+    <div id="loginDiv" class="stateDiv">
+      <span>Username</span><input type="textbox" id="username" />
+      <span>Password</span><input type="password" id="password" />
+      <div>
+        <input type="button" id="loginButton" value="Login" />
+        
+      </div>
+      <span id="wrongLogin">Wrong username or password</span>
+      <a href="create_user.html" style="vertical-align:bottom;margin-right:10px;float:right;font-size: 14px" > Create account </a>
+    </div>
+    
+    <div id="lobbyDiv" class="stateDiv">
+      <input type="button" id="challengeButton" value="Challenge" />
+      <input type="button" id="statsButton" value="Stats" />
+      
+      <div style="width: 500px;">      
+        <div id="challengeList"></div>      
+        <div id="gameList"></div>
+        <div id="finishedList"></div>
+      </div>  
+    </div>
+    
+    <div id="challengeAutoComplete">
+      <input type="textbox" id="autoCompleteTextbox" class="autocompleteInput" />
+      <input type="button" id="challengeButton" class="okButton" value="Challenge!" />
+      <input type="button" id="challengeButton" class="cancelButton" value="Cancel" />
+      <div id="userAutoCompleteData"></div>
+    </div>
+    
+    <div id="statusBar"></div>
+    <script type="application/dart" src="othello.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

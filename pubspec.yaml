@@ -1,0 +1,11 @@
+name: othello
+description: A sample web application
+dependencies:
+  bot: any
+  browser: any
+  http_server: any
+  meta: any
+  route: any
+  sqljocky: any
+  uuid: any
+  widget: any

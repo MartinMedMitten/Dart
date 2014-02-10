@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Othello</title>
+    <link type="text/css" rel="stylesheet" href="othello.css">
+  </head>
+
+  <body>
+    
+     <div id="createUserDiv" class="stateDiv">
+      <span>Username</span><input type="textbox" id="username" />
+      <span>Password</span><input type="password" id="password" />
+      <span>Email</span><input type="textbox" id="email" />
+      <span>Username backwards</span><input type="textbox" id="security" />
+      <div>
+        <input type="button" id="createbutton" value="Create" />
+      </div>
+      
+      <span id="errorMessage">ERROR TERROR</span>
+      <a href="othello.dart" style="vertical-align:bottom;margin-right:10px;float:right;font-size: 14px" > Back to login! </a>
+    </div>
+    
+    <div id="statusBar"></div>
+    <script type="application/dart" src="create_user.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

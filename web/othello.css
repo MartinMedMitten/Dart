@@ -1,0 +1,134 @@
+canvas#mainCanvas {
+  position: absolute;
+}
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+#whosTurn {
+  margin-left:125px;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+#activePlayerDiv{
+  padding-top: 540px;
+}
+#sample_container_id {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+#sample_text_id {
+  font-size: 24pt;
+  text-align: center;
+  margin-top: 140px;
+}
+#popup {
+  font-family: 'Josefin Sans', serif;
+  position: absolute;
+  display: none;
+  text-align: center;
+  width: 400px;
+  background: rgb(247,235,203);
+  border: 12px solid rgb(221,212,173);
+  margin: 150px 20px 20px 40px;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  color:black;
+  font-weight: bold;
+}
+
+.stateDiv {
+  font-family: 'Josefin Sans', serif;
+  position: absolute;
+  display: none;
+  width: 500px;
+  background: rgb(247,235,203);
+  border: 12px solid rgb(221,212,173);
+  margin: 150px 20px 20px 40px;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  color:black;
+  font-weight: bold;
+}
+.myTurnGame{
+  background: rgb(0,150,0);
+  border: 6px solid rgb(10,10,10);
+  padding: 10px;
+}
+.challenge{ 
+  background: rgb(0,0,150);
+  border: 6px solid rgb(10,10,10);
+  padding: 10px;
+}
+
+
+.opponentTurnGame{
+  background: rgb(150,0,0);
+  border: 6px solid rgb(10,10,10);
+  padding: 10px;
+}
+.myTurnGame:hover{
+  background: rgb(0,200,0);
+  border: 6px solid rgb(121,212,173);
+}
+.opponentTurnGame:hover{
+  background: rgb(200,0,0);
+  border: 6px solid rgb(121,212,173);
+}
+#loginButton {
+  margin-left: 240px;
+}
+#wrongLogin{
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  float:left;
+  display: none;
+}
+
+#playArea{
+  display:none;
+}
+
+#loginDiv > input{
+  width: 100px;
+  margin:5px 10px 5px 10px;
+}
+#userAutoCompleteData ul {
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  background: rgb(227,215,203);
+}
+#userAutoCompleteData li:first-child {
+  background: rgb(247,235,233);
+}
+#challengeAutoComplete{
+  display: none;
+  position: absolute;
+  margin: 100px;
+  background: rgb(247,235,203);
+  border: 3px solid rgb(221,212,173);
+}
+
+#challengeList{
+  float:left;
+  width: 33%
+}
+#gameList{
+  float:left;
+  width: 33%
+}
+#errorMessage{
+  display: none;
+}
