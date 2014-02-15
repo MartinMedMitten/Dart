@@ -15,3 +15,4 @@ _ReSharper*
 node_modules
 packages
 build
+*.patch
