@@ -57,19 +57,19 @@ Future<bool> validate(String sessionId, String username) {
 void HandleRequest(request, json, WebSocket webSocket) {
   switch (request) {
     case 'login':
-      userHandler.LoginFromJsonAndReply(json,webSocket);
+      userHandler.loginFromJsonAndReply(json,webSocket);
       break;
     case 'do_move':
       _doMoveFromJsonAndReply(json, webSocket);
       break;
     case 'get_games':
-      GetGamesFromJsonAndReply(json['username'], webSocket);
+      _getGamesFromJsonAndReply(json['username'], webSocket);
       break;
     case 'get_challenges':
-      GetChallengesFromJsonAndReply(json['username'], webSocket);
+      _getChallengesFromJsonAndReply(json['username'], webSocket);
       break;
     case 'get_finished_games':
-      GetFinishedGamesFromJsonAndReply(json['username'], webSocket);
+      _getFinishedGamesFromJsonAndReply(json['username'], webSocket);
       break;
     case 'load_game':
       LoadGameFromJsonAndReply(json, webSocket);
@@ -78,19 +78,19 @@ void HandleRequest(request, json, WebSocket webSocket) {
       HandleChallengeStatusUpdate(json, webSocket);
       break;
     case 'challenge':
-      HandleChallenge(json, webSocket).then((_) {
+      handleChallenge(json, webSocket).then((_) {
         relayGameStatusUpdate(json['opponent']);
         relayGameStatusUpdate(json['username']);
       });
       break;
     case 'autocomplete_user':
-      userHandler.HandleAutcompleteUser(json, webSocket);
+      userHandler.handleAutcompleteUser(json, webSocket);
       break;
     case 'parse_user':
-      userHandler.HandleParseUser(json, webSocket);
+      userHandler.handleParseUser(json, webSocket);
       break;
     case 'register_user':
-      userHandler.HandleRegisterUser(json, webSocket);
+      userHandler.handleRegisterUser(json, webSocket);
       break;
     default:
       log.warning("Invalid request '$request'.");
@@ -121,7 +121,7 @@ LoadGameFromJsonAndReply(json, webSocket){
     });
   });
 }
-GetFinishedGamesFromJsonAndReply(String username, WebSocket webSocket) {
+void _getFinishedGamesFromJsonAndReply(String username, WebSocket webSocket) {
   username = username.toLowerCase();
   const int FINISHED = 2; 
   repo.GetGames(username, FINISHED).then((List<Game> games) {
@@ -129,12 +129,12 @@ GetFinishedGamesFromJsonAndReply(String username, WebSocket webSocket) {
   });
 }
 
-GetChallengesFromJsonAndReply(String username, WebSocket webSocket) {
+void _getChallengesFromJsonAndReply(String username, WebSocket webSocket) {
   repo.GetChallenges(username, 0).then((List<Challenge> challenges) {
     _sendChallenges(challenges, username, webSocket);
   });
 }
-void GetGamesFromJsonAndReply(String username, webSocket){
+void _getGamesFromJsonAndReply(String username, webSocket){
   username = username.toLowerCase();
   const int ONGOING = 0;
   repo.GetGames(username, 0).then((List<Game> games) {

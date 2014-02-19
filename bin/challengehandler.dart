@@ -1,6 +1,6 @@
 part of othello_server;
 
-Future HandleChallenge(dynamic json, WebSocket webSocket) {
+Future handleChallenge(dynamic json, WebSocket webSocket) {
   String challenger = json['username'];
   String opponent = json['opponent'];
   

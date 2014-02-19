@@ -7,7 +7,7 @@ class UserHandler{
   bool ContainsUser(String username) => webSocketMap.containsKey(username);
   WebSocket GetSocket(String username) => webSocketMap[username];
   
-  void LoginFromJsonAndReply(json, webSocket){
+  void loginFromJsonAndReply(json, webSocket){
     String username = json['username'];
     username = username.toLowerCase();
     var password = json['password'];
@@ -37,7 +37,7 @@ class UserHandler{
     }) ;
   }
   
-  HandleRegisterUser(dynamic json, WebSocket webSocket) {
+  handleRegisterUser(dynamic json, WebSocket webSocket) {
     var username = json['username'];
     var password = json['password'];
     var mail = json['email'];
@@ -52,7 +52,7 @@ class UserHandler{
     });
   }
   
-  HandleParseUser(dynamic json, WebSocket webSocket) {
+  handleParseUser(dynamic json, WebSocket webSocket) {
     var q = json['q']; //METODO de måste kunna bli null här alltså....
     repo.UserAutocomplete(q, 1).then((p){
       
@@ -64,7 +64,7 @@ class UserHandler{
     });
   }
 
-  HandleAutcompleteUser(dynamic json, WebSocket webSocket) {
+  handleAutcompleteUser(dynamic json, WebSocket webSocket) {
     String q = json['q'];
     var limit = json['limit'];
 
